@@ -1,9 +1,12 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title>
-      <h1>
+      <h1 *ngIf="originalTitle else elseBlock">
         {{ originalTitle }}
       </h1>
+      <ng-template #elseBlock>
+        <h1>Choose a Project</h1>
+      </ng-template>
     </mat-card-title>
   </mat-card-header>
   <form (submit)="save(currentProject)">
